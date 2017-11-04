@@ -175,7 +175,7 @@ corrplot(corr_matrix, order = "FPC", method = "circle", type = "lower",
          tl.cex = 0.6, tl.col = rgb(0, 0, 0))
 ```
 
-![](Practical_Machine_Learning_files/figure-markdown_github/unnamed-chunk-21-1.png)
+![](corr_plot.png)
 
 If two variables are highly correlated their colors are either dark blue (for a positive correlation) or dark red (for a negative corraltions). To further reduce the number of variables, a Principal Components Analysis (PCA) could be performed as the next step. However, since there are only very few strong correlations among the input variables, the PCA will not be performed. Instead, a few different prediction models will be built next.
 
@@ -190,7 +190,7 @@ fit_decision_tree <- rpart(classe ~ ., data = train_set, method="class")
 fancyRpartPlot(fit_decision_tree)
 ```
 
-![](Practical_Machine_Learning_files/figure-markdown_github/unnamed-chunk-22-1.png)
+![](rpart_plot.png)
 
 Predictions of the decision tree model on `test_set`.
 
@@ -242,7 +242,7 @@ plot(conf_matrix_decision_tree$table, col = conf_matrix_decision_tree$byClass,
                   round(conf_matrix_decision_tree$overall['Accuracy'], 4)))
 ```
 
-![](Practical_Machine_Learning_files/figure-markdown_github/unnamed-chunk-24-1.png)
+![](decision_tree.png)
 
 ### 6.2. Generalized Boosted Model (GBM)
 
